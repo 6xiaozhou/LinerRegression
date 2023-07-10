@@ -23,9 +23,12 @@ func main() {
 	//trainingDataY := data[:][14:]
 	//testDataX := data[405:][:14]
 	//fmt.Println(trainingDataX)
-	fmt.Println("---------------")
-	fmt.Println(len(data), len(data[0]))
-	s := data[:405]
-	//fmt.Println(len(testDataX))
-	fmt.Println(s[0][0])
+	//fmt.Println("---------------")
+	//fmt.Println(len(data), len(data[0]))
+	trainData := data[1:405]
+	testData := data[405:]
+	fmt.Println(trainData)
+	fmt.Println("----------------------------")
+	fmt.Println(testData)
+
 }
