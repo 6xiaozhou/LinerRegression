@@ -20,7 +20,16 @@ func main() {
 	sTestDataY = []float64{13.4}
 
 	lr := new(linerregression.LinerRegressionModel)
+	lr.W = make([]float64, len(sTrainDataX))
+	//初始化
+	for i := range lr.W {
+		lr.W[i] = 1.0
+	}
+	lr.B = 1.0
 	lr.Train(10000, 0.01, sTrainDataX, sTrainDataY)
+	for i := 0; i < 10000; i++ {
+		lr.GredientDescent(0.01, sTrainDataX, sTrainDataY)
+	}
 	//lr.Train(100, 0.1, sTrainDataX, sTrainDataY)
 	fmt.Println(lr.W, lr.B)
 	y := lr.FX(sTestDataX)
