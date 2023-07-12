@@ -71,7 +71,7 @@ func main() {
 	}
 	//初始化一个线性回归模型
 	lr := new(linerregression.LinerRegressionModel)
-	lr.Train(20000, 0.000001, sTrainDataX, sTrainDataY)
+	lr.Train(1000, 0.000001, sTrainDataX, sTrainDataY)
 	//lr.Train(100, 0.1, sTrainDataX, sTrainDataY)
 	fmt.Println(lr.W, lr.B)
 	//fmt.Println(len(sTestDataX[0]))
